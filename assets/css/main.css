@@ -1,0 +1,65 @@
+.clearfix {
+  clear: both;
+  overflow: auto;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #1f1f1f;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+body {
+  background: url('/assets/img/bg.png');
+  background-size: cover;
+}
+#main-container {
+  position: fixed;
+  width: 70%;
+  margin: 80px 15%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+#main-container #title-bar {
+  background: #1775d1;
+  text-align: center;
+  color: white;
+  padding: 8px 4px;
+  font-weight: 300;
+  border-radius: 5px 5px 0 0;
+}
+#main-container #action-bar {
+  background: #1f96f2;
+  padding: 16px 8px;
+  clear: both;
+  overflow: auto;
+}
+#main-container #action-bar .action {
+  float: left;
+  color: white;
+  text-align: center;
+  width: 80px;
+}
+#main-container #action-bar .action.action-right {
+  float: right;
+}
+#main-container #action-bar .action .action-icon {
+  padding: 8px 8px;
+  font-size: 1em;
+  border-radius: 64px;
+  background: #ff6e40;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+#main-container #action-bar .action .action-text {
+  font-size: .7em;
+  font-weight: 300;
+}
+#main-container #content {
+  background: white;
+  min-height: 312px;
+  padding: 16px;
+  border-radius: 0 0 5px 5px;
+}

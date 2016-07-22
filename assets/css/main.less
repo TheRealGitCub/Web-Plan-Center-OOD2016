@@ -1,0 +1,87 @@
+@primary: rgba(31, 150, 242, 1.00);
+@primary-dark: rgba(23, 117, 209, 1.00);
+@secondary: rgba(255, 110, 64, 1.00);
+@black: rgba(31, 31, 31, 1.00);
+
+@button-text: white;
+@primary-text: @black;
+
+@window-border-radius: 5px;
+
+.clearfix {
+	clear: both;
+	overflow: auto;
+}
+
+body,html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	color: @black;
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+body {
+	background: url('/assets/img/bg.png');
+	background-size: cover;
+}
+
+#main-container {
+	position: fixed;
+	width: 70%;
+	margin: 80px 15%;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+	border-radius: @window-border-radius;
+	
+	#title-bar {
+		background: @primary-dark;
+		text-align: center;
+		color: @button-text;
+		padding: 8px 4px;
+		font-weight: 300;
+		border-radius: @window-border-radius @window-border-radius 0 0;
+	}
+
+	#action-bar {
+		background: @primary;
+		padding: 16px 8px;
+		.clearfix;
+		
+		.action {
+			float: left;
+			color: @button-text;
+			text-align: center;
+			width: 80px;
+			
+			&.action-right {
+				float: right;
+			}
+			
+			.action-icon {
+				padding: 8px 8px;
+				font-size: 1em;
+				border-radius: 64px;
+				background: @secondary;
+				text-align: center;
+				display: inline-block;
+				margin-bottom: 6px;
+			}
+			
+			.action-text {
+				font-size: .7em;
+				font-weight: 300;
+			}
+			
+		}
+		
+	}
+	
+	#content {
+		background: white;
+		min-height: 312px;
+		padding: 16px;
+		border-radius: 0 0 @window-border-radius @window-border-radius;
+	}
+	
+}
+
