@@ -11,7 +11,7 @@ html {
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 body {
-  background: url('/assets/img/bg.png');
+  background: url('/assets/img/bg.png') #27102f;
   background-size: cover;
 }
 #main-container {
