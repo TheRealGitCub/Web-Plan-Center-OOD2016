@@ -4,10 +4,6 @@
 <!-- jQuery -->
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
 <!-- FontAwesome -->
 <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
 
