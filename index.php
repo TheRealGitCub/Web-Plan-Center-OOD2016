@@ -1,3 +1,34 @@
+<?php
+
+	require 'WebPlanCenter/PageModel.class.php';
+	require 'WebPlanCenter/PageView.class.php';
+	require 'WebPlanCenter/PageController.class.php';
+	
+	session_start();
+	
+	$_SESSION["pages"] = [
+		[
+			"title" => "Home",
+			"type" => PAGETYPE_LANDING,
+			"children" => [],
+		],
+		[
+			"title" => "About Me",
+			"type" => PAGETYPE_LANDING,
+			"children" => ["A Child"],
+		],
+		[
+			"title" => "Gallery",
+			"type" => PAGETYPE_GALLERY,
+			"children" => [],
+		],
+		[
+			"title" => "Twitter",
+			"type" => PAGETYPE_EXTERNAL,
+			"children" => [],
+		]
+	];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +83,18 @@
 		</div>
 		
 		<div id="content">
-			 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<?php
+			
+				foreach($_SESSION["pages"] as $page) {
+					$model = new PageModel($page["title"], $page["type"], $page["children"]);
+					$controller = new PageController($model);
+					$view = new PageView($controller, $model);
+					
+					echo $view -> output();
+					
+				}
+			
+			?>
 		</div>
 		
 	</div>
