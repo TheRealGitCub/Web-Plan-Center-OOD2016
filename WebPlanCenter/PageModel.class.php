@@ -11,22 +11,22 @@
 		public $typeName;
 		
 		public function __construct($title, $type, $children = []) {
-			$this -> title = $title;
-			$this -> type = $type;
-			$this -> children = $children;
+			$this->title = $title;
+			$this->type = $type;
+			$this->children = $children;
 			
-			switch ($this -> type) {
+			switch ($this->type) {
 				case PAGETYPE_LANDING:
-					$this -> typeName = "Landing Page";
+					$this->typeName = "Landing Page";
 					break;
 				case PAGETYPE_GALLERY:
-					$this -> typeName = "Gallery";
+					$this->typeName = "Gallery";
 					break;
 				case PAGETYPE_EXTERNAL:
-					$this -> typeName = "External Link";
+					$this->typeName = "External Link";
 					break;
 				default:
-					$this -> typeName = "Error";
+					$this->typeName = "Error";
 					break;
 			}
 		}

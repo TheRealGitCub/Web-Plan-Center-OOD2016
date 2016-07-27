@@ -6,7 +6,7 @@
 				$controller = new PageController($pageModel);
 				$view = new PageView($controller, $pageModel);
 				
-				echo $view -> output();
+				echo $view->output();
 				
 			}
 		}
