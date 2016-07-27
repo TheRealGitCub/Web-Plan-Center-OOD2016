@@ -14,6 +14,9 @@
 	require 'WebPlanCenter/IndexFacade.class.php';
 	$index = new IndexFacade();
 	
+	# Contains Iterator Pattern
+	require 'WebPlanCenter/Button.class.php';
+	
 	session_start();
 	
 	$_SESSION["pages"] = [
@@ -33,6 +36,25 @@
 		new PageModel (
 			"Twitter",
 			PAGETYPE_EXTERNAL
+		)
+	];
+	
+	$buttons = [
+		new Button (
+			"New Landing Page",
+			"fa-file"
+		),
+		new Button (
+			"New Gallery Page",
+			"fa-photo"
+		),
+		new Button (
+			"New External Link",
+			"fa-external-link"
+		),
+		new Button (
+			"About This Program",
+			"fa-info-sign"
 		)
 	];
 	
@@ -56,38 +78,7 @@
 		</div>
 		
 		<div id="action-bar">
-			<div class="action">
-				<div class="action-icon">
-					<i class="fa fa-file fa-fw"></i>
-				</div>
-				<div class="action-text">
-					New Landing Page
-				</div>
-			</div>
-			<div class="action">
-				<div class="action-icon">
-					<i class="fa fa-photo fa-fw"></i>
-				</div>
-				<div class="action-text">
-					New Gallery Page
-				</div>
-			</div>
-			<div class="action">
-				<div class="action-icon">
-					<i class="fa fa-external-link fa-fw"></i>
-				</div>
-				<div class="action-text">
-					New External Link
-				</div>
-			</div>
-			<div class="action action-right">
-				<div class="action-icon">
-					<i class="fa fa-save fa-fw"></i>
-				</div>
-				<div class="action-text">
-					Export Site Layout
-				</div>
-			</div>
+			<?php $index->printButtons($buttons) ?>
 		</div>
 		
 		<div id="content">
