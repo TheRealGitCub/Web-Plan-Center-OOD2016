@@ -10,6 +10,21 @@
 				
 			}
 		}
+		
+		public function printButtons($buttons) {
+			$buttonList = new ButtonList();
+			
+			foreach ($buttons as $button) {
+				$buttonList->addButton($button);
+			}
+			
+			$buttonIterator = new ButtonListIterator($buttonList);
+			
+			$buttonIterator->getCurrentButton()->output();
+			while ($buttonIterator->hasNextButton()) {
+				$buttonIterator->getNextButton()->output();
+			}
+		}
 	}
 
 ?>
