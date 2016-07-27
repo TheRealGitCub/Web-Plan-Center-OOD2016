@@ -10,6 +10,11 @@
 	//require 'WebPlanCenter/PageList.class.php';
 	//require 'WebPlanCenter/PageListIterator.class.php';
 	
+	# Facade Pattern
+	require 'WebPlanCenter/IndexFacade.class.php';
+	
+	$index = new IndexFacade();
+	
 	session_start();
 	
 	$_SESSION["pages"] = [
@@ -87,18 +92,7 @@
 		</div>
 		
 		<div id="content">
-			<?php
-			
-				foreach($_SESSION["pages"] as $page) {
-					$model = new PageModel($page["title"], $page["type"], $page["children"]);
-					$controller = new PageController($model);
-					$view = new PageView($controller, $model);
-					
-					echo $view -> output();
-					
-				}
-			
-			?>
+			<?php $index->printPages($_SESSION["pages"]) ?>
 		</div>
 		
 	</div>
