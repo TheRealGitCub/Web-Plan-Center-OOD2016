@@ -4,30 +4,33 @@
 	require 'WebPlanCenter/PageView.class.php';
 	require 'WebPlanCenter/PageController.class.php';
 	
+	# Iterator Pattern
+	# NOT IN USE
+	//require 'WebPlanCenter/PageList.class.php';
+	//require 'WebPlanCenter/PageListIterator.class.php';
+	
 	session_start();
 	
 	$_SESSION["pages"] = [
-		[
-			"title" => "Home",
-			"type" => PAGETYPE_LANDING,
-			"children" => [],
-		],
-		[
-			"title" => "About Me",
-			"type" => PAGETYPE_LANDING,
-			"children" => ["A Child"],
-		],
-		[
-			"title" => "Gallery",
-			"type" => PAGETYPE_GALLERY,
-			"children" => [],
-		],
-		[
-			"title" => "Twitter",
-			"type" => PAGETYPE_EXTERNAL,
-			"children" => [],
-		]
+		new PageModel (
+			"Home",
+			PAGETYPE_LANDING
+		),
+		new PageModel (
+			"About Me",
+			PAGETYPE_LANDING,
+			["A Child"]
+		),
+		new PageModel (
+			"Current Projects",
+			PAGETYPE_GALLERY
+		),
+		new PageModel (
+			"Twitter",
+			PAGETYPE_EXTERNAL
+		)
 	];
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
