@@ -6,13 +6,12 @@
 	require 'WebPlanCenter/PageController.class.php';
 	
 	# Iterator Pattern
-	# NOT IN USE
+	# NOT IN USE BECAUSE IT SUCKS
 	//require 'WebPlanCenter/PageList.class.php';
 	//require 'WebPlanCenter/PageListIterator.class.php';
 	
 	# Facade Pattern
 	require 'WebPlanCenter/IndexFacade.class.php';
-	
 	$index = new IndexFacade();
 	
 	session_start();
