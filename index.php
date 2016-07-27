@@ -1,5 +1,9 @@
 <?php
 
+	define(PAGETYPE_LANDING, 0);
+	define(PAGETYPE_GALLERY, 1);
+	define(PAGETYPE_EXTERNAL, 2);
+
 	# MVC Pattern
 	require 'WebPlanCenter/PageModel.class.php';
 	require 'WebPlanCenter/PageView.class.php';

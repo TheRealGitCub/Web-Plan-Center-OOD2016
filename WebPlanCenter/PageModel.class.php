@@ -1,9 +1,5 @@
 <?php
 
-	define(PAGETYPE_LANDING, 0);
-	define(PAGETYPE_GALLERY, 1);
-	define(PAGETYPE_EXTERNAL, 2);
-
 	class PageModel {
 		public $title;
 		public $type;
