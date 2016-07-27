@@ -1,5 +1,6 @@
 <?php
 
+	# MVC Pattern
 	require 'WebPlanCenter/PageModel.class.php';
 	require 'WebPlanCenter/PageView.class.php';
 	require 'WebPlanCenter/PageController.class.php';
