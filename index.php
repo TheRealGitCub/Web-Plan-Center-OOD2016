@@ -76,6 +76,32 @@
 <body>
 	
 	<div id="main-container">
+		
+		<div class="dialog-outer" id="dialog-add-item">
+			<div class="dialog">
+				<div class="dialog-inner">
+					<h2>Add New <span class="dialog-page-type">Page</span></h2>
+					<form id="form-add-item">
+						<div class="form-group">
+							<label for="add-item-name">Page Name</label>
+							<input type="text" name="add-item-name" id="add-item-name">
+						</div>
+						
+						<div class="form-group">
+							<label for="add-item-page-type">Page Type</label>
+							<select id="add-item-page-type" name="add-item-page-type">
+								<option value="landing">Landing Page</option>
+								<option value="gallery">Gallery Page</option>
+								<option value="external">External Link</option>
+							</select>
+						</div>
+						<div class="clearfix">
+						<input type="submit" id="add-item-submit"></input>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	
 		<div id="title-bar">
 			Web Plan Center

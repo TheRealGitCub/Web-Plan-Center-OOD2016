@@ -43,12 +43,60 @@ h5 {
   width: 70%;
   margin: 80px 15%;
 }
+.dialog-outer {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  z-index: 20;
+  height: 100%;
+  width: 100%;
+}
+.dialog-outer .dialog {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 70px 25%;
+  background: white;
+}
+.dialog-outer .dialog .dialog-inner {
+  padding: 15px;
+}
+form .form-group {
+  width: 50%;
+  margin-bottom: 10px;
+}
+form .form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: .8em;
+}
+form .form-group input,
+form .form-group select,
+form .form-group textarea {
+  width: 100%;
+  font-size: 1.05em;
+  padding: 2px 5px;
+}
+form input[type='submit'] {
+  background: #1f96f2;
+  float: right;
+  border: 0;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 3px;
+  font-size: 1.1em;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+form input[type='submit']:active {
+  background: #1775d1;
+}
 #main-container {
   position: fixed;
   width: 70%;
   margin: 80px 15%;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+  z-index: 10;
 }
 #main-container #title-bar {
   background: #1775d1;
