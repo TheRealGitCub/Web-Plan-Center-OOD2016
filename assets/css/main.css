@@ -79,9 +79,12 @@ h5 {
 }
 #main-container #content {
   background: #d1d1d1;
-  min-height: 312px;
+  min-height: 316px;
+  height: 50vh;
   padding: 16px;
   border-radius: 0 0 5px 5px;
+  clear: both;
+  overflow-y: scroll;
 }
 #main-container #content .page {
   background: white;
