@@ -4,21 +4,18 @@
 	define(PAGETYPE_GALLERY, 1);
 	define(PAGETYPE_EXTERNAL, 2);
 
-	# MVC Pattern
+	# MVC Pattern Setup & Implementation
 	require 'WebPlanCenter/PageModel.class.php';
 	require 'WebPlanCenter/PageView.class.php';
 	require 'WebPlanCenter/PageController.class.php';
 	
-	# Iterator Pattern
-	# NOT IN USE BECAUSE IT SUCKS
-	//require 'WebPlanCenter/PageList.class.php';
-	//require 'WebPlanCenter/PageListIterator.class.php';
-	
-	# Facade Pattern
+	# Facade Pattern Setup & Implementation
 	require 'WebPlanCenter/IndexFacade.class.php';
 	$index = new IndexFacade();
 	
 	# Contains Iterator Pattern
+	
+	# Iterator Pattern Setup & Implementation + Decorator Implementation
 	require 'WebPlanCenter/Button.class.php';
 	
 	session_start();
@@ -74,6 +71,8 @@
 </head>
 
 <body>
+
+
 	
 	<div id="main-container">
 		
