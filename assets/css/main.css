@@ -22,7 +22,7 @@ html {
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 body {
-  background: url('/assets/img/bg.png') #27102f;
+  background: url('/assets/img/bg.png') #27102f center center;
   background-size: cover;
 }
 #main-container {
