@@ -38,17 +38,25 @@ body {
 	background-size: cover;
 }
 
-#main-container {
 h1,h2,h3,h4,h5 {
 	padding: 0;
 	margin: 0;
 	margin-bottom: 10px;
 }
+
+.window-border {
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+	border-radius: @window-border-radius;
+}
+
+.main-window-size {
 	position: fixed;
 	width: 70%;
 	margin: 80px 15%;
-	box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
 	border-radius: @window-border-radius;
+#main-container {
+	.main-window-size;
+	.window-border;
 	
 	#title-bar {
 		background: @primary-dark;
