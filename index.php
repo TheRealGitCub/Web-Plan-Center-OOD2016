@@ -69,25 +69,54 @@
 		<div class="dialog-outer" id="dialog-add-item">
 			<div class="dialog">
 				<div class="dialog-inner">
-					<h2>Add New <span class="dialog-page-type">Page</span></h2>
+					<h2>Add <span class="dialog-page-type">--</span></h2>
 					<form id="form-add-item">
 						<div class="form-group">
 							<label for="add-item-name">Page Name</label>
 							<input type="text" name="add-item-name" id="add-item-name">
 						</div>
 						
-						<div class="form-group">
-							<label for="add-item-page-type">Page Type</label>
-							<select id="add-item-page-type" name="add-item-page-type">
-								<option value="landing">Landing Page</option>
-								<option value="gallery">Gallery Page</option>
-								<option value="external">External Link</option>
-							</select>
+						<input type="hidden" id="add-item-page-type" name="add-item-page-type">
+						
+						<div class="form-group hidden" id="form-group-add-item-link">
+							<label for="add-item-link">External Link URL</label>
+							<input type="text" name="add-item-link" id="add-item-link">
 						</div>
-						<div class="clearfix">
-						<input type="submit" id="add-item-submit"></input>
-					</div>
+						
+						<div class="text-right">
+							<input type="button" class="dialog-cancel" value="Cancel"></input>
+							<input type="submit" id="add-item-submit" value="Submit" class="btn-primary"></input>
+						</div>
+						
 					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="dialog-outer" id="dialog-about">
+			<div class="dialog">
+				<div class="dialog-inner">
+					<h2>About Web Plan Center</h2>
+					This application was developed by <a href="http://kobitate.com">Kobi Tate</a>.
+					It was created for an Object Oriented design class, and it employs
+					various object orientation design patterns such as:
+					
+					<ul>
+						<li>Model / View / Controller (main UI)</li>
+						<li>Decorator Pattern (action button icons)</li>
+						<li>Facade Pattern (main UI actions)</li>
+						<li>Iterator Pattern (button generation)</li>
+					</ul>
+					
+					It was built from scratch, taking advantage of <a href="http://jquery.com">jQuery</a>,
+					<a href="http://fontawesome.io">FontAwesome</a>, and <a href="http://lesscss.org">Less</a>.
+					Dependencies are managed by <a href="https://bower.io">Bower</a>.
+					Web hosting provided by <a href="http://digitalocean.com">DigitalOcean</a>.
+					
+					<div class="text-right">
+						<form><input type="button" class="dialog-cancel" value="Close"></form>
+					</div>
+					
 				</div>
 			</div>
 		</div>

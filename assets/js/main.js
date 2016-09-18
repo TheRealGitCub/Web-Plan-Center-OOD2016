@@ -64,4 +64,8 @@ $(document).ready(function() {
 		}
 	});
 	
+	$("#action-about").click(function() {
+		$("#dialog-about").addClass("active");
+	});
+	
 });
