@@ -14,4 +14,32 @@ $(document).ready(function() {
 			});
 		}
 	});
+	
+	$("#form-add-item").submit(function() {
+		$.ajax({
+			url: '/WebPlanCenter/ajax/newPage.php',
+			data: {
+				name: $("#add-item-name").val(),
+				typeString: $("#add-item-page-type").val(),
+				children: []
+			},
+			beforeSend: function() {
+				if ($("#add-item-name").val() === "") {
+					alert("Please provide a page name");
+					return false;
+				}
+			},
+			success: function() {
+				$.ajax({
+					url: '/WebPlanCenter/ajax/getPages.php',
+					success: function(data) {
+						$("#content").html(data);
+						$("#dialog-add-item").removeClass("active");
+					}
+				});
+			}
+		});
+		return false;
+	});
+	
 });
