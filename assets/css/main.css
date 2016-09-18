@@ -97,18 +97,27 @@ form .form-group textarea {
   font-size: 1.05em;
   padding: 2px 5px;
 }
-form input[type='submit'] {
-  background: #1f96f2;
-  float: right;
+form input[type='submit'],
+form input[type='button'] {
+  background: white;
   border: 0;
-  color: white;
-  padding: 8px 10px;
+  padding: 8px 6px;
   border-radius: 3px;
   font-size: 1.1em;
   margin-bottom: 2px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-form input[type='submit']:active {
+form input[type='submit']:active,
+form input[type='button']:active {
+  background: #c8c8c8;
+}
+form input[type='submit'].btn-primary,
+form input[type='button'].btn-primary {
+  background: #1f96f2;
+  color: white;
+}
+form input[type='submit'].btn-primary:active,
+form input[type='button'].btn-primary:active {
   background: #1775d1;
 }
 #main-container {
