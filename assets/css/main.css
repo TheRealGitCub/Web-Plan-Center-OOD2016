@@ -147,6 +147,7 @@ form input[type='button'].btn-primary:active {
   color: white;
   text-align: center;
   width: 80px;
+  cursor: pointer;
 }
 #main-container #action-bar .action.action-right {
   float: right;
