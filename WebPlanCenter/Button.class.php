@@ -2,6 +2,7 @@
 
 	class Button {
 		private $title;
+		private $actionName;
 		private $iconDecorator;
 		private $icon;
 		
@@ -20,12 +21,14 @@
 			return $this->iconDecorator->getIcon();
 		}
 		
+		function getActionName() {
+			return $this->actionName;
 		}
 		
 		function output() {
 			ob_start();
 			?>
-			<div class="action">
+			<div class="action" id="<?php echo "action-".$this->getActionName() ?>">
 				<div class="action-icon">
 					<i class="fa <?php echo $this->getIcon() ?> fa-fw"></i>
 				</div>
