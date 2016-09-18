@@ -80,12 +80,16 @@ h1,h2,h3,h4,h5 {
 		background: white;
 		.anim(.3s);
 		.dialog-inner {
-			padding: 15px;
-			font-size: .9em;
-			h2 {
-				margin-bottom: 15px;
-				padding-bottom: 5px;
-				border-bottom: solid 1px rgb(222, 222, 222);
+			.dialog-header {
+				background: rgba(0,0,0,0.1);
+				text-align: center;
+				font-weight: 300;
+				padding: 8px 4px;
+				font-size: .95em;
+			}
+			.dialog-content {
+				padding: 15px;
+				font-size: .9em;
 			}
 		}
 	}
@@ -226,5 +230,26 @@ form {
 		
 	}
 	
+	#toast {
+		color: white;
+		font-weight: 300;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: rgba(0,0,0,0.6);
+		border-radius: 0 0 @window-border-radius @window-border-radius;
+		.anim();
+		height: 0;
+		overflow: hidden;
+		
+		#toast-inner {
+			padding: 8px 16px;
+		}
+		
+		&.active {
+			height: 35px;
+		}
+	}
 }
 

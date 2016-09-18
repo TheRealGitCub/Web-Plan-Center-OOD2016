@@ -6,7 +6,17 @@ $(document).ready(function() {
 			$.ajax({
 				url: "/WebPlanCenter/ajax/clearPages.php",
 				success: function() {
-					location.reload();
+					$.ajax({
+						url: '/WebPlanCenter/ajax/getPages.php',
+						success: function(data) {
+							$("#content").html(data);
+							$("#toast-inner").text("Pages cleared!");
+							$("#toast").addClass("active");
+							window.setTimeout(function () {
+								$("#toast").removeClass("active");
+							}, 3000);
+						}
+					});
 				},
 				error: function() {
 					alert("Oops! Something went wrong.");

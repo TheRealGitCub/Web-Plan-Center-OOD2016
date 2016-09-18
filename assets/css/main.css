@@ -65,14 +65,16 @@ h5 {
   background: white;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.dialog-outer .dialog .dialog-inner {
+.dialog-outer .dialog .dialog-inner .dialog-header {
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: 300;
+  padding: 8px 4px;
+  font-size: .95em;
+}
+.dialog-outer .dialog .dialog-inner .dialog-content {
   padding: 15px;
   font-size: .9em;
-}
-.dialog-outer .dialog .dialog-inner h2 {
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  border-bottom: solid 1px #dedede;
 }
 .dialog-outer:not(.active) {
   opacity: 0;
@@ -197,4 +199,23 @@ form input[type='button'].btn-primary:active {
 }
 #main-container #content .page strong {
   display: block;
+}
+#main-container #toast {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 5px 5px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 0;
+  overflow: hidden;
+}
+#main-container #toast #toast-inner {
+  padding: 8px 16px;
+}
+#main-container #toast.active {
+  height: 35px;
 }

@@ -69,8 +69,8 @@
 		<div class="dialog-outer" id="dialog-add-item">
 			<div class="dialog">
 				<div class="dialog-inner">
-					<h2>Add <span class="dialog-page-type">--</span></h2>
-					<form id="form-add-item">
+					<div class="dialog-header">Add <span class="dialog-page-type">--</span></div>
+					<form id="form-add-item" class="dialog-content">
 						<div class="form-group">
 							<label for="add-item-name">Page Name</label>
 							<input type="text" name="add-item-name" id="add-item-name">
@@ -96,27 +96,28 @@
 		<div class="dialog-outer" id="dialog-about">
 			<div class="dialog">
 				<div class="dialog-inner">
-					<h2>About Web Plan Center</h2>
-					This application was developed by <a href="http://kobitate.com">Kobi Tate</a>.
-					It was created for an Object Oriented design class, and it employs
-					various object orientation design patterns such as:
-					
-					<ul>
-						<li>Model / View / Controller (main UI)</li>
-						<li>Decorator Pattern (action button icons)</li>
-						<li>Facade Pattern (main UI actions)</li>
-						<li>Iterator Pattern (button generation)</li>
-					</ul>
-					
-					It was built from scratch, taking advantage of <a href="http://jquery.com">jQuery</a>,
-					<a href="http://fontawesome.io">FontAwesome</a>, and <a href="http://lesscss.org">Less</a>.
-					Dependencies are managed by <a href="https://bower.io">Bower</a>.
-					Web hosting provided by <a href="http://digitalocean.com">DigitalOcean</a>.
-					
-					<div class="text-right">
-						<form><input type="button" class="dialog-cancel" value="Close"></form>
+					<div class="dialog-header">About Web Plan Center</div>
+					<div class="dialog-content">
+						This application was developed by <a href="http://kobitate.com">Kobi Tate</a>.
+						It was created for an Object Oriented design class, and it employs
+						various object orientation design patterns such as:
+						
+						<ul>
+							<li>Model / View / Controller (main UI)</li>
+							<li>Decorator Pattern (action button icons)</li>
+							<li>Facade Pattern (main UI actions)</li>
+							<li>Iterator Pattern (button generation)</li>
+						</ul>
+						
+						It was built from scratch, taking advantage of <a href="http://jquery.com">jQuery</a>,
+						<a href="http://fontawesome.io">FontAwesome</a>, and <a href="http://lesscss.org">Less</a>.
+						Dependencies are managed by <a href="https://bower.io">Bower</a>.
+						Web hosting provided by <a href="http://digitalocean.com">DigitalOcean</a>.
+						
+						<div class="text-right">
+							<form><input type="button" class="dialog-cancel" value="Close"></form>
+						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -131,6 +132,12 @@
 		
 		<div id="content">
 			<?php $index->printPages($_SESSION["pages"]) ?>
+		</div>
+		
+		<div id="toast">
+			<div id="toast-inner">
+				Mmmm... toast
+			</div>
 		</div>
 		
 	</div>
