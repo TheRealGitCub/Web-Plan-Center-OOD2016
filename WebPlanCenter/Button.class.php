@@ -5,15 +5,16 @@
 		private $iconDecorator;
 		private $icon;
 		
-		function __construct($title, $icon) {
 		function __construct($title, $actionName, $iconType) {
 			$this->title = $title;
-			$this->icon = $icon;
 			$this->actionName = $actionName;
 			$iconType = $iconType."Decorator";
 			$this->iconDecorator = new $iconType($this);
 		}
 		
+		function getTitle() {
+			return $this->title;
+		}
 		
 		function getIcon() {
 			return $this->iconDecorator->getIcon();
@@ -26,10 +27,10 @@
 			?>
 			<div class="action">
 				<div class="action-icon">
-					<i class="fa <?php echo $this->icon ?> fa-fw"></i>
+					<i class="fa <?php echo $this->getIcon() ?> fa-fw"></i>
 				</div>
 				<div class="action-text">
-					<?php echo $this->title ?>
+					<?php echo $this->getTitle() ?>
 				</div>
 			</div>
 			<?php
@@ -49,7 +50,8 @@
 		
 		function addButton(Button $button) {
 			$this->buttons[] = $button;
-			return ++$this->buttonCount;
+			$this->buttonCount++;
+			return $this->buttonCount;
 		}
 		
 		function getButtonCount() {
@@ -74,14 +76,13 @@
 		}
 		
 		function getNextButton() {
-			if ($this->hasNextButton()) {
-				return $this->buttonList->getButtons()[++$this->currentButton];
-			}
-			return null;
+			$this->currentButton++;
+			return $this->getCurrentButton();
 		}
 		
 		function hasNextButton() {
-			return isset($this->buttonList->getButtons()[$this->currentButton+1]);
+			
+			return isset($this->buttonList->getButtons()[($this->currentButton)+1]);
 		}
 		
 	}
