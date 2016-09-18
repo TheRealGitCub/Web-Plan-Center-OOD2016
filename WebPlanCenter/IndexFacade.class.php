@@ -20,9 +20,11 @@
 			
 			$buttonIterator = new ButtonListIterator($buttonList);
 			
-			$buttonIterator->getCurrentButton()->output();
+			echo $buttonIterator->getCurrentButton()->output();
+			
 			while ($buttonIterator->hasNextButton()) {
-				$buttonIterator->getNextButton()->output();
+				$next = $buttonIterator->getNextButton();
+				echo $next->output();
 			}
 		}
 		
