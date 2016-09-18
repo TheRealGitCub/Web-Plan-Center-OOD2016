@@ -42,4 +42,8 @@ $(document).ready(function() {
 		return false;
 	});
 	
+	$(".dialog-cancel").click(function() {
+		$(".dialog-outer.active").removeClass("active");
+	});
+	
 });
