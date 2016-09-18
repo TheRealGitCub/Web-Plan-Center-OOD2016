@@ -2,6 +2,12 @@
   clear: both;
   overflow: auto;
 }
+.text-right {
+  text-align: right;
+}
+.hidden {
+  display: none;
+}
 pre {
   width: 50%;
   height: 25%;
