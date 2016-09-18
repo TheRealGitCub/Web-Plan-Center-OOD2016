@@ -13,49 +13,39 @@
 	require 'WebPlanCenter/IndexFacade.class.php';
 	$index = new IndexFacade();
 	
-	# Contains Iterator Pattern
+	# Decorator Pattern Setup
+	require 'WebPlanCenter/ButtonDecorator.class.php';
 	
 	# Iterator Pattern Setup & Implementation + Decorator Implementation
 	require 'WebPlanCenter/Button.class.php';
 	
 	session_start();
 	
-	$_SESSION["pages"] = [
-		new PageModel (
-			"Home",
-			PAGETYPE_LANDING
-		),
-		new PageModel (
-			"About Me",
-			PAGETYPE_LANDING,
-			["A Child"]
-		),
-		new PageModel (
-			"Current Projects",
-			PAGETYPE_GALLERY
-		),
-		new PageModel (
-			"Twitter",
-			PAGETYPE_EXTERNAL
-		)
-	];
-	
 	$buttons = [
 		new Button (
 			"New Landing Page",
-			"fa-file"
+			"new-landing",
+			"AddButton"
 		),
 		new Button (
 			"New Gallery Page",
-			"fa-photo"
+			"new-gallery",
+			"AddButton"
 		),
 		new Button (
 			"New External Link",
-			"fa-external-link"
+			"new-external",
+			"AddButton"
+		),
+		new Button (
+			"Clear All Pages",
+			"clear-all",
+			"DeleteButton"
 		),
 		new Button (
 			"About This Program",
-			"fa-info-sign"
+			"about",
+			"AboutButton"
 		)
 	];
 	
