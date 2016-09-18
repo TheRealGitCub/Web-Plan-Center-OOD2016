@@ -2,11 +2,23 @@
 
 	class Button {
 		private $title;
+		private $iconDecorator;
 		private $icon;
 		
 		function __construct($title, $icon) {
+		function __construct($title, $actionName, $iconType) {
 			$this->title = $title;
 			$this->icon = $icon;
+			$this->actionName = $actionName;
+			$iconType = $iconType."Decorator";
+			$this->iconDecorator = new $iconType($this);
+		}
+		
+		
+		function getIcon() {
+			return $this->iconDecorator->getIcon();
+		}
+		
 		}
 		
 		function output() {
