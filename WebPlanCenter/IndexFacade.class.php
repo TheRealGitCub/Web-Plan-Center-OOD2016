@@ -25,6 +25,22 @@
 				$buttonIterator->getNextButton()->output();
 			}
 		}
+		
+		public function newPage($pageName, $pageTypeString, $children = null) {
+			$type = constant("PAGETYPE_" . strtoupper($pageTypeString));
+			$pageModel = new PageModel (
+				$pageName,
+				$type,
+				$children
+			);
+			
+			$controller = new PageController($pageModel);
+			$controller->newPage($pageModel);
+		}
+		
+		public function clearPages() {
+			session_destroy();
+		}
 	}
 
 ?>
