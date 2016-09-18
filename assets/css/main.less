@@ -55,6 +55,10 @@ h1,h2,h3,h4,h5 {
 	margin: 80px 15%;
 }
 
+.anim(@time:.5s) {
+	transition: all @time cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .dialog-outer {
 	position: absolute;
 	background: rgba(0,0,0,0.7);
@@ -62,15 +66,26 @@ h1,h2,h3,h4,h5 {
 	z-index: 20;
 	height: 100%;
 	width: 100%;
+	.anim(.3s);
 	
 	.dialog {
 		.window-border;
 		margin: 70px 25%;
 		background: white;
+		.anim(.3s);
 		.dialog-inner {
 			padding: 15px;
 		}
 	}
+	
+	&:not(.active) {
+		opacity: 0;
+		pointer-events: none;
+		.dialog {
+			margin-top: 90px;
+		}
+	}
+	
 }
 
 form {

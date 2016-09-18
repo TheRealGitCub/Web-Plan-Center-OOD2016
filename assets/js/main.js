@@ -46,4 +46,22 @@ $(document).ready(function() {
 		$(".dialog-outer.active").removeClass("active");
 	});
 	
+	$("[id^='action-new-']").click(function() {
+		$("#dialog-add-item").addClass("active");
+		$("#dialog-add-item .dialog-page-type").text($(this).find(".action-text").text());
+		
+		var type = $(this).attr("id").replace("action-new-","");
+		
+		$("#add-item-name").val("");
+		$("#add-item-link").val("");
+		$("#add-item-page-type").val(type);
+		
+		if (type === "external") {
+			$("#form-group-add-item-link").removeClass("hidden");
+		}
+		else {
+			$("#form-group-add-item-link").addClass("hidden");
+		}
+	});
+	
 });
