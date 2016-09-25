@@ -1,4 +1,16 @@
 /* global confirm,alert */
+
+var toastTimeout;
+
+function toast(message) {
+	$("#toast-inner").text(message);
+	$("#toast").addClass("active");
+	clearTimeout(toastTimeout);
+	toastTimeout = window.setTimeout(function () {
+		$("#toast").removeClass("active");
+	}, 3000);
+}
+
 $(document).ready(function() {
 	$("#action-clear-all").click(function(){
 		var r = confirm("Are you sure you want to clear all pages? This cannot be undone!");
@@ -10,11 +22,7 @@ $(document).ready(function() {
 						url: '/WebPlanCenter/ajax/getPages.php',
 						success: function(data) {
 							$("#content").html(data);
-							$("#toast-inner").text("Pages cleared!");
-							$("#toast").addClass("active");
-							window.setTimeout(function () {
-								$("#toast").removeClass("active");
-							}, 3000);
+							toast("Pages cleared!");
 						}
 					});
 				},
