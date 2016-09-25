@@ -22,7 +22,7 @@
 			
 			ob_start();
 			?>
-			    <div class="<?php echo $pageClass ?>">
+			    <div class="<?php echo $pageClass ?>" id="page-<?php echo $this->model->sessionIndex ?>">
 					<strong><?php echo $this->model->title ?></strong>
 					<?php echo $this->model->typeName ?>
 				</div>

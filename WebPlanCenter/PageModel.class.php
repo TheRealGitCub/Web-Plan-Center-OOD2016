@@ -5,11 +5,13 @@
 		public $type;
 		public $children;
 		public $typeName;
+		public $sessionIndex;
 		
-		public function __construct($title, $type, $children = []) {
+		public function __construct($title, $type, $children = [], $sessionIndex) {
 			$this->title = $title;
 			$this->type = $type;
 			$this->children = $children;
+			$this->sessionIndex = $sessionIndex;
 			
 			switch ($this->type) {
 				case PAGETYPE_LANDING:

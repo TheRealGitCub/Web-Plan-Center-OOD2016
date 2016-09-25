@@ -28,12 +28,13 @@
 			}
 		}
 		
-		public function newPage($pageName, $pageTypeString, $children = null) {
+		public function newPage($pageName, $pageTypeString, $sessionIndex, $children = null) {
 			$type = constant("PAGETYPE_" . strtoupper($pageTypeString));
 			$pageModel = new PageModel (
 				$pageName,
 				$type,
-				$children
+				$children,
+				$sessionIndex
 			);
 			
 			$controller = new PageController($pageModel);

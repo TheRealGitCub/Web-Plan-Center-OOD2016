@@ -21,13 +21,16 @@
 	
 	session_start();
 	
-	if (isset($_GET["name"])) {
-		$children = null;
-		if (isset($_GET["children"])) {
-			$children = explode(",", $_GET["children"]);
-		}
-		$index->newPage($_GET["name"], $_GET["typeString"], count($_SESSION["pages"]), $children);
+	$order = $_GET["newOrder"];
+	$order = explode(",", $order);
+
+	$newPages = [];
+	
+	foreach($order as $i => $j) {
+		$newPages[$i] = $_SESSION["pages"][$j];
 	}
+	
+	$_SESSION["pages"] = $newPages;
 	
 	
 ?>
