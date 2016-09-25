@@ -11,8 +11,8 @@
 		}
 		
 		public function getNthPage($n) {
-			if (is_numeric($n) && isset($this -> pages[$n]) ) {
-				return $this -> pages[$n];
+			if (is_numeric($n) && isset($this->pages[$n]) ) {
+				return $this->pages[$n];
 			}
 			
 			return null;

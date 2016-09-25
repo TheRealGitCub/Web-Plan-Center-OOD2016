@@ -4,7 +4,7 @@
 		public $string;
 		
 		public function __construct() {
-			$this -> string = "Hello world!";
+			$this->string = "Hello world!";
 		}
 	}
 
