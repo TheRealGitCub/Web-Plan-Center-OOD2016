@@ -53,6 +53,7 @@ $(document).ready(function() {
 					success: function(data) {
 						$("#content").html(data);
 						$("#dialog-add-item").removeClass("active");
+						$("#content").sortable("refresh");
 					}
 				});
 			}
@@ -84,6 +85,25 @@ $(document).ready(function() {
 	
 	$("#action-about").click(function() {
 		$("#dialog-about").addClass("active");
+	});
+	
+	$("#content").sortable({
+		stop: function() {
+			var newOrder = "";
+			$(".page").each(function() {
+				newOrder += $(this).attr("id").replace("page-","") + ",";
+			});
+			newOrder = newOrder.substring(0, newOrder.length - 1);
+			$.ajax({
+				url: 'WebPlanCenter/ajax/reorderPages.php',
+				data: {
+					newOrder: newOrder
+				},
+				success: function() {
+					toast("Page order saved!");
+				}
+			});
+		}
 	});
 	
 });
