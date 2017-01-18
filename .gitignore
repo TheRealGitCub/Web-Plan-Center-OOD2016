@@ -6,3 +6,5 @@ config.codekit
 assets/.DS_Store
 
 .DS_Store
+
+*.codekit3
